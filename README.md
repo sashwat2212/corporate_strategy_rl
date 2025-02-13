@@ -48,14 +48,6 @@ The system simulates business decisions in a **competitive market**, including:
 
 ---
 
-##  Efficiency Metrics
-| Metric            | Value                 |
-|------------------|----------------------|
-| **Efficiency Score** | `50,000,000` (both agents) |
-| **Market Share**    | `100%` (potential need for competitive adjustments) |
-
----
-
 ##  Next Steps for Improvement
  **Optimize reward functions** to prevent capital depletion.  
  **Enhance competitive behavior** to prevent unrealistic **100% market dominance**.  
@@ -63,3 +55,12 @@ The system simulates business decisions in a **competitive market**, including:
 
  **Evaluate the impact of different market conditions** to create a more dynamic training environment.  
  **Introduce adversarial strategies** to prevent agents from overfitting to specific conditions.  
+
+---
+
+##   3. View results:
+
+###Generated plots will be saved in the output/ directory:
+-	**agent_performance.png (Total reward trends per agent)
+-	**capital_growth.png (Capital trends over episodes)
+-	**market_share.png (Market share evolution) 
