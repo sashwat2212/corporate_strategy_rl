@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from env import CorporateStrategyEnv
 from agents import QLearningAgent
@@ -35,9 +33,9 @@ def train_agents(num_agents=2, num_episodes=1000, max_steps_per_episode=50):
                 break
         
         # Log performance (rewards and capital)
-        capital = [env.state[i][0] for i in range(num_agents)]  # Assuming capital is stored in env.state
-        market_share = [env.state[i][1] for i in range(num_agents)]  # Assuming market share is stored in env.state
-        performance_log.append([episode, total_rewards, capital, market_share])  # Add market_share here
+        capital = [env.state[i][0] for i in range(num_agents)]  # capital is stored in env.state
+        market_share = [env.state[i][1] for i in range(num_agents)]  # market share is stored in env.state
+        performance_log.append([episode, total_rewards, capital, market_share])  
         
         # Decay exploration rate for each agent
         for agent in agents:
@@ -67,7 +65,7 @@ def plot_performance(performance_log):
     plt.legend()
     plt.show()
 
-# Call this function with the performance_log from training
+# function call with the performance_log from training
 plot_performance(performance_log)
 
 def plot_capital_per_episode(performance_log):
@@ -84,7 +82,7 @@ def plot_capital_per_episode(performance_log):
     plt.legend()
     plt.show()
 
-# Call this function with the performance_log from training
+# function call with the performance_log from training
 plot_capital_per_episode(performance_log)
 
 def plot_market_share(performance_log):
@@ -100,9 +98,10 @@ def plot_market_share(performance_log):
     plt.legend()
     plt.show()
 
-plot_market_share(performance_log)
+plot_market_share(performance_log) # function call with the performance_log from training
 
 
+# Save the efficiency scores and market shares
 efficiency_scores = []
 market_shares = []
 
