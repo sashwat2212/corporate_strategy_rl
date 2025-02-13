@@ -60,7 +60,7 @@ The system simulates business decisions in a **competitive market**, including:
 
 ##   3. View results:
 
-###Generated plots will be saved in the output/ directory:
--	**agent_performance.png (Total reward trends per agent)
--	**capital_growth.png (Capital trends over episodes)
--	**market_share.png (Market share evolution) 
+Generated plots will be saved in the output/ directory:
+-	agent_performance.png (Total reward trends per agent)
+-	capital_growth.png (Capital trends over episodes)
+-	market_share.png (Market share evolution) 
