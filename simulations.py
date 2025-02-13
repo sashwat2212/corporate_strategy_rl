@@ -2,6 +2,11 @@ import numpy as np
 from env import CorporateStrategyEnv
 from agents import QLearningAgent
 import matplotlib.pyplot as plt
+import os
+
+# Create output directory
+output_dir = "output"
+os.makedirs(output_dir, exist_ok=True)  
 
 def train_agents(num_agents=2, num_episodes=1000, max_steps_per_episode=50):
     # Create environment
@@ -63,7 +68,8 @@ def plot_performance(performance_log):
     plt.ylabel('Total Reward')
     plt.title('Agent Performance over Episodes')
     plt.legend()
-    plt.show()
+    plt.savefig(os.path.join(output_dir, "agent_performance.png"))
+    plt.close()
 
 # function call with the performance_log from training
 plot_performance(performance_log)
@@ -80,7 +86,8 @@ def plot_capital_per_episode(performance_log):
     plt.ylabel('Capital')
     plt.title('Capital Growth Over Episodes')
     plt.legend()
-    plt.show()
+    plt.savefig(os.path.join(output_dir, "capital_growth.png"))
+    plt.close()
 
 # function call with the performance_log from training
 plot_capital_per_episode(performance_log)
@@ -96,7 +103,8 @@ def plot_market_share(performance_log):
     plt.ylabel('Market Share')
     plt.title('Market Share Over Episodes')
     plt.legend()
-    plt.show()
+    plt.savefig(os.path.join(output_dir, "market_share.png"))
+    plt.close()
 
 plot_market_share(performance_log) # function call with the performance_log from training
 
@@ -116,3 +124,5 @@ print("Market Shares:", market_shares)
 
 np.save("efficiency_scores.npy", efficiency_scores)
 np.save("market_shares.npy", market_shares)
+
+

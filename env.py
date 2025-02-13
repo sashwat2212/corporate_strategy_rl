@@ -58,6 +58,9 @@ class CorporateStrategyEnv(gym.Env):
                     
             # Apply market fluctuation
             market_share *= (1 + market_fluctuation)
+
+            # Ensure Market Share stays within 0 to 100
+            market_share = max(0, min(100, market_share))
             
             # Update state
             self.state[i] = [capital, market_share]
